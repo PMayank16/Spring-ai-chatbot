@@ -1,5 +1,5 @@
-# Step 1: Build jar
-FROM maven:3.9.9-eclipse-temurin-25 AS build
+# Step 1: Build (use Java 21 for build - stable)
+FROM maven:3.9.9-eclipse-temurin-21 AS build
 
 WORKDIR /app
 
@@ -7,7 +7,7 @@ COPY . .
 
 RUN mvn clean package -DskipTests
 
-# Step 2: Run jar
+# Step 2: Run (Java 25)
 FROM eclipse-temurin:25-jdk
 
 WORKDIR /app
