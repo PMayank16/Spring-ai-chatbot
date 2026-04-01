@@ -32,5 +32,7 @@ build/
 ### VS Code ###
 .vscode/
 
-
-application.properties
+# 🔐 IMPORTANT (Secrets ignore karo)
+src/main/resources/application.properties
+.env
+*.env
